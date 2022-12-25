@@ -11,5 +11,7 @@ internal class Program
         Console.WriteLine(result);
         result = SHA1_Demo.Test(message);
         Console.WriteLine(result);
+
+        Console.ReadLine();
     }
 }

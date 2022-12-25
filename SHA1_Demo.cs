@@ -42,6 +42,7 @@ namespace DeAnThucTap
 
             byte[] length = BitConverter.GetBytes(bytes.Length * 8); // bit converter returns little-endian
             Array.Copy(length, 0, processedMessage, processedMessage.Length - 8, 4); // add length in bits
+
             return processedMessage;
         }
 
@@ -62,6 +63,7 @@ namespace DeAnThucTap
                     W[j] = BitConverter.ToUInt32(processedMessage, (i * 64) + (j * 4));
                 for (int j = 16; j < 79; ++j)
                     W[j] = LeftRotate((W[j - 3] ^ W[j - 8] ^ W[j - 14] ^ W[j - 16]), 1);
+                //foreach(uint x in W) { DebugString(x); }
                 // initialize round variables
                 uint A = h0, B = h1, C = h2, D = h3, E = h4, F = 0, g = 0;
                 // primary loop
@@ -104,13 +106,18 @@ namespace DeAnThucTap
             var hh = LeftRotate(h0, 128) | LeftRotate(h1, 96) | LeftRotate(h2, 64) | LeftRotate(h3, 32) | h4;
             
             //return GetByteString(a0) + GetByteString(b0) + GetByteString(c0) + GetByteString(d0);
-            return GetByteString(hh);
-            //return GetByteString(h0) + GetByteString(h1) + GetByteString(h2) + GetByteString(h3) + GetByteString(h4);
+            //return GetByteString(hh);
+            return GetByteString(h4) + GetByteString(h3) + GetByteString(h2) + GetByteString(h1) + GetByteString(h0);
         }
 
         private static string GetByteString(uint x)
         {
             return String.Join("", BitConverter.GetBytes(x).Select(y => y.ToString("x2")));
+        }
+        private static void DebugString(uint x)
+        {
+            string s = String.Join("", BitConverter.GetBytes(x).Select(y => y.ToString("x2")));
+            Console.WriteLine(s);
         }
     }
 }
