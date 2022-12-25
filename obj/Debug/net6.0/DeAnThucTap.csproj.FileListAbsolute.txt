@@ -1,0 +1,15 @@
+C:\DeAnThucTap\DeAnThucTap\bin\Debug\net6.0\DeAnThucTap.exe
+C:\DeAnThucTap\DeAnThucTap\bin\Debug\net6.0\DeAnThucTap.deps.json
+C:\DeAnThucTap\DeAnThucTap\bin\Debug\net6.0\DeAnThucTap.runtimeconfig.json
+C:\DeAnThucTap\DeAnThucTap\bin\Debug\net6.0\DeAnThucTap.dll
+C:\DeAnThucTap\DeAnThucTap\bin\Debug\net6.0\DeAnThucTap.pdb
+C:\DeAnThucTap\DeAnThucTap\obj\Debug\net6.0\DeAnThucTap.csproj.AssemblyReference.cache
+C:\DeAnThucTap\DeAnThucTap\obj\Debug\net6.0\DeAnThucTap.GeneratedMSBuildEditorConfig.editorconfig
+C:\DeAnThucTap\DeAnThucTap\obj\Debug\net6.0\DeAnThucTap.AssemblyInfoInputs.cache
+C:\DeAnThucTap\DeAnThucTap\obj\Debug\net6.0\DeAnThucTap.AssemblyInfo.cs
+C:\DeAnThucTap\DeAnThucTap\obj\Debug\net6.0\DeAnThucTap.csproj.CoreCompileInputs.cache
+C:\DeAnThucTap\DeAnThucTap\obj\Debug\net6.0\DeAnThucTap.dll
+C:\DeAnThucTap\DeAnThucTap\obj\Debug\net6.0\refint\DeAnThucTap.dll
+C:\DeAnThucTap\DeAnThucTap\obj\Debug\net6.0\DeAnThucTap.pdb
+C:\DeAnThucTap\DeAnThucTap\obj\Debug\net6.0\DeAnThucTap.genruntimeconfig.cache
+C:\DeAnThucTap\DeAnThucTap\obj\Debug\net6.0\ref\DeAnThucTap.dll
