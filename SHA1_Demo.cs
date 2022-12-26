@@ -43,6 +43,9 @@ namespace DeAnThucTap
             byte[] length = BitConverter.GetBytes(bytes.Length * 8); // bit converter returns little-endian
             Array.Copy(length, 0, processedMessage, processedMessage.Length - 8, 4); // add length in bits
 
+
+
+            //foreach(byte x in processedMessage) { Console.WriteLine(GetByteString(x)); }
             return processedMessage;
         }
 
@@ -103,11 +106,13 @@ namespace DeAnThucTap
                 h4 += E;
             }
 
-            var hh = LeftRotate(h0, 128) | LeftRotate(h1, 96) | LeftRotate(h2, 64) | LeftRotate(h3, 32) | h4;
+            //var hh = LeftRotate(h0, 128) | LeftRotate(h1, 96) | LeftRotate(h2, 64) | LeftRotate(h3, 32) | h4;
             
             //return GetByteString(a0) + GetByteString(b0) + GetByteString(c0) + GetByteString(d0);
             //return GetByteString(hh);
-            return GetByteString(h4) + GetByteString(h3) + GetByteString(h2) + GetByteString(h1) + GetByteString(h0);
+
+            //return GetByteString(h4) + GetByteString(h3) + GetByteString(h2) + GetByteString(h1) + GetByteString(h0);
+            return GetByteString(h0) + GetByteString(h1) + GetByteString(h2) + GetByteString(h3) + GetByteString(h4);
         }
 
         private static string GetByteString(uint x)
@@ -119,5 +124,6 @@ namespace DeAnThucTap
             string s = String.Join("", BitConverter.GetBytes(x).Select(y => y.ToString("x2")));
             Console.WriteLine(s);
         }
+
     }
 }
