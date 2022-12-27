@@ -10,17 +10,17 @@ internal class Program
         //Console.WriteLine("MD5: {0}", result);
         //result = SHA1_Demo.Test(message);
         //Console.WriteLine("SHA1: {0}", result);
-        Read_file();
+        CheckInputFile();
 
         Console.ReadLine();
     }
 
-    private static void Check()
+    private static void CheckInputFile()
     {
         //if (File.Exists("C:\\random text folder\\Setting.txt"))
         if (File.Exists("Input.txt"))
         {
-            Read_file();
+            HashInputFile();
         }
         else
         {
@@ -28,7 +28,7 @@ internal class Program
         }
     }
 
-    public static void Read_file()
+    public static void HashInputFile()
     {
         FileStream fsi = File.OpenRead("Input.txt");
         FileStream fso = File.Create("Output.txt");
