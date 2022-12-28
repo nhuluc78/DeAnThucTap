@@ -34,20 +34,30 @@ internal class Program
         FileStream fso = File.Create("Output.txt");
         StreamReader reader = new(fsi);
         StreamWriter writer = new(fso);
-        string a;
+        string salt, message, salted_message;
         int count = 0;
         while(!reader.EndOfStream)
         {
 
-            a = reader.ReadLine();
-            Console.WriteLine("{0}. Input = {1}", count, a);
-            writer.WriteLine("{0}. Input = {1}", count, a);
-            string result = MD5_Demo.Test(a);
-            Console.WriteLine("MD5: {0}", result);
-            writer.WriteLine("MD5: {0}", result);
-            result = SHA1_Demo.Test(a);
-            Console.WriteLine("SHA1: {0}", result);
-            writer.WriteLine("SHA1: {0}", result);
+            message = reader.ReadLine();
+            salt = reader.ReadLine();
+            salted_message = message + salt;
+            Console.WriteLine("{0}. Input = \"{1}\"", count, message);
+            writer.WriteLine("{0}. Input = \"{1}\"", count, message);
+            string result = MD5_Demo.Test(message);
+            Console.WriteLine("MD5 (Unsalted): {0}", result);
+            writer.WriteLine("MD5 (Unsalted): {0}", result);
+            result = SHA1_Demo.Test(message);
+            Console.WriteLine("SHA1 (Unsalted): {0}", result);
+            writer.WriteLine("SHA1 (Unsalted): {0}", result);
+            Console.WriteLine("Salt = \"{0}\", Salted message = \"{1}\"", salt, salted_message);
+            writer.WriteLine("Salt= \"{0}\", Salted message = \"{1}\"", salt, salted_message);
+            result = MD5_Demo.Test(salted_message);
+            Console.WriteLine("MD5 (Salted): {0}", result);
+            writer.WriteLine("MD5 (Salted): {0}", result);
+            result = SHA1_Demo.Test(salted_message);
+            Console.WriteLine("SHA1 (Salted): {0}", result);
+            writer.WriteLine("SHA1 (Salted): {0}", result);
             count++;
         }
         reader.Close();
