@@ -39,7 +39,7 @@ namespace DeAnThucTap
             return (x << c) | (x >> (32 - c));
         }
 
-        public static string Test(string message)
+        public static string Hash_MD5(string message)
         {
             //process message
             byte[] bytes = ProcMessage(message);
