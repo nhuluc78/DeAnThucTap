@@ -54,7 +54,6 @@ namespace DeAnThucTap
         public static byte[] ProcMessage(string message)
         {
             byte[] bytes = Encoding.ASCII.GetBytes(message);
-            //foreach(byte b in bytes) { Console.WriteLine(b); }
             return bytes;
         }
 
@@ -85,7 +84,6 @@ namespace DeAnThucTap
                 uint[] W = new uint[16];
                 for (int j = 0; j < 16; ++j)
                     W[j] = BitConverter.ToUInt32(processedMessage, (i * 64) + (j * 4));
-
                 // initialize round variables
                 uint A = a0, B = b0, C = c0, D = d0, F = 0, g = 0;
 
