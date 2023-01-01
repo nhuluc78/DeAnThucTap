@@ -29,7 +29,7 @@ namespace DeAnThucTap
         public static byte[] ProcMessage(string message)
         {
             byte[] bytes = Encoding.ASCII.GetBytes(message);
-            Console.WriteLine(BitConverter.ToString(bytes));
+            //Console.WriteLine(BitConverter.ToString(bytes));
             return bytes;
         }
 
@@ -69,7 +69,7 @@ namespace DeAnThucTap
                 for (int j = 16; j < 79; ++j)
                     W[j] = LeftRotate((W[j - 3] ^ W[j - 8] ^ W[j - 14] ^ W[j - 16]), 1);
                 for(int j = 0; j < 79; ++j) { W[j] = BinaryPrimitives.ReverseEndianness(W[j]); }
-                foreach (uint x in W) { GetByteString(x); }
+                //foreach (uint x in W) { GetByteString(x); }
                 // initialize round variables
                 uint A = h0, B = h1, C = h2, D = h3, E = h4, F = 0, g = 0;
                 // primary loop
